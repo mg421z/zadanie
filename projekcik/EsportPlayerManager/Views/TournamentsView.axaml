@@ -1,0 +1,47 @@
+    <UserControl xmlns="https://github.com/avaloniaui"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                 xmlns:viewModels="clr-namespace:EsportPlayerManager.ViewModels"
+                 x:DataType="viewModels:TournamentsViewModel"
+                 mc:Ignorable="d"
+                 x:Class="EsportPlayerManager.Views.TournamentsView"
+                 d:DesignWidth="900" d:DesignHeight="600">
+
+        <UserControl.DataContext>
+            <viewModels:TournamentsViewModel />
+        </UserControl.DataContext>
+
+        <ScrollViewer Padding="10">
+            <WrapPanel Orientation="Horizontal" ItemWidth="300">
+                <ItemsControl ItemsSource="{Binding Tournaments}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border Background="#2d2d3f" CornerRadius="10" Padding="15" Width="280" Margin="10">
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Name}" FontWeight="Bold" FontSize="18" Foreground="White" Margin="0 0 0 10"/>
+
+                                    <TextBlock Foreground="White">
+                                        <Run Text="Entry Fee: "/>
+                                        <Run Text="{Binding EntryFee}"/>
+                                    </TextBlock>
+
+                                    <TextBlock Foreground="White">
+                                        <Run Text="Prize Pool: "/>
+                                        <Run Text="{Binding PrizePool}"/>
+                                    </TextBlock>
+
+                                    <TextBlock Foreground="White">
+                                        <Run Text="Min Skill: "/>
+                                        <Run Text="{Binding MinSkillRequired}"/>
+                                    </TextBlock>
+
+                                    <Button Content="Sign Up" HorizontalAlignment="Right" Margin="0 10 0 0"/>
+                                </StackPanel>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </WrapPanel>
+        </ScrollViewer>
+    </UserControl>

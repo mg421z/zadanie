@@ -1,0 +1,41 @@
+<Window
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:vm="clr-namespace:EsportPlayerManager.ViewModels"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignWidth="900" d:DesignHeight="600"
+    x:Class="EsportPlayerManager.Views.MainWindow"
+    x:DataType="vm:MainWindowViewModel"
+    Icon="/Assets/avalonia-logo.ico"
+    Title="Espor Player Manager">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+    <Border Background="#1e1e2a" Padding="20">
+        <DockPanel>
+            <!-- Pionowy pasek po lewej -->
+            <StackPanel DockPanel.Dock="Left" Orientation="Vertical" HorizontalAlignment="Stretch" Spacing="15" Width="150">
+                <Button Content="🎮 Players"
+                        IsEnabled="{Binding PlayerButtonEnabled}"
+                        Command="{Binding ShowPlayerCommand}"
+                        Classes="MainButton"/>
+
+                <Button Content="🏆 Tournaments"
+                        IsEnabled="{Binding TournamentsButtonEnabled}"
+                        Command="{Binding ShowTournamentsCommand}"
+                        Classes="MainButton"/>
+
+                <Button Content="🧠 Training"
+                        IsEnabled="{Binding TrainingButtonEnabled}"  
+                        Classes="MainButton"/>
+            </StackPanel>
+
+            <!-- Główna zawartość -->
+            <ContentControl Content="{Binding CurrentView}" Margin="20,0,0,0"/>
+        </DockPanel>
+    </Border>
+</Window>
