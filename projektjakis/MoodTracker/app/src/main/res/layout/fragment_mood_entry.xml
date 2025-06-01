@@ -1,0 +1,79 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:gravity="center_horizontal">
+
+        <EditText
+            android:id="@+id/mood_entry_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Opisz swój dzień..."
+            android:textSize="16sp"
+            android:minLines="2"
+            android:gravity="top" />
+
+        <RadioGroup
+            android:id="@+id/mood_entry_feel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp">
+
+            <RadioButton android:text="Szczęśliwy" />
+            <RadioButton android:text="Zadowolony" />
+            <RadioButton android:text="Smutny" />
+        </RadioGroup>
+
+        <Spinner
+            android:id="@+id/mood_entry_category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp" />
+
+        <CheckBox
+            android:id="@+id/mood_entry_check_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Byłem dzisiaj produktywny" />
+
+        <CheckBox
+            android:id="@+id/mood_entry_check_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Byłem aktywny fizycznie" />
+
+        <CheckBox
+            android:id="@+id/mood_entry_check_three"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Spotkałem kogoś" />
+
+        <RatingBar
+            android:id="@+id/mood_entry_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:stepSize="0.5"
+            android:layout_marginTop="16dp" />
+
+        <Switch
+            android:id="@+id/mood_entry_importance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="To był ważny dzień"
+            android:layout_marginTop="8dp" />
+
+        <Button
+            android:id="@+id/mood_entry_save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Zapisz mój dzień"
+            android:layout_marginTop="20dp" />
+    </LinearLayout>
+</ScrollView>
